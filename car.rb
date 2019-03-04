@@ -44,3 +44,19 @@ class Car
     @@count  # return @@countの略
   end
 end
+
+class TrackCar < Car
+
+  attr_reader :load_weight
+
+  def initialize(number, color, load_weight= 500)
+    @number = number
+    @color = color
+    @load_weight = load_weight
+  end
+
+  def load_weight
+    @load_weight
+  end
+
+end
