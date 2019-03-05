@@ -47,7 +47,7 @@ class Car
       @passengers += 1
       puts "乗車しました｡"
     elsif @passengers >= MAX_PASSENGERS
-      puts "乗車できません。この車の最大乗車人数は4人です。"
+      puts "乗車できません。この車の最大乗車人数は#{MAX_PASSENGERS}人です。"
     end
   end
 
