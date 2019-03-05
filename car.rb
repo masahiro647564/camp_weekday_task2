@@ -16,7 +16,8 @@ class Car
     # @speedを初期化
     @speed = 0
     @@count += 1
-    @passengers = 0
+    # 運転手を追加 
+    @passengers = 1
 
   end
 
@@ -25,7 +26,7 @@ class Car
     @speed += UP_SPEED
     if @speed >= 50
       puts "[ALERT]スピードが#{@speed}になりました｡減速します｡"
-      @speed - speed_down
+      speed_down
     elsif @speed >= 30
       puts "[ALERT]スピードが#{@speed}になりました｡"
     end 
@@ -41,19 +42,12 @@ class Car
              end
   end
 
-  def passengers
-    if @passengers == MAX_PASSENGERS
-      @passengers = 4
-    else
-      @passengers += 1
-    end
-  end
-
   def get_on
-    if @passengers == MAX_PASSENGERS
-      puts "乗車できません｡この車の最大乗車人数は4人です｡"
-    else
+    if @passengers < MAX_PASSENGERS
+      @passengers += 1
       puts "乗車しました｡"
+    elsif @passengers >= MAX_PASSENGERS
+      puts "乗車できません。この車の最大乗車人数は4人です。"
     end
   end
 
@@ -66,18 +60,12 @@ class Car
   end
 end
 
+# TrackCarクラスの追加(Carクラスの継承)
 class TrackCar < Car
-
   attr_reader :load_weight
 
-  def initialize(number, color, load_weight= 500)
-    @number = number
-    @color = color
+  def initialize(name, color, load_weight= 500)
+    super(name, color)
     @load_weight = load_weight
   end
-
-  def load_weight
-    @load_weight
-  end
-
 end

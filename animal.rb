@@ -11,6 +11,7 @@ class Animal
   end
 end
 
+# Dogクラスの追加(Animalクラスの継承 )
 class Dog < Animal
   def initialize(name)
     super
@@ -18,6 +19,7 @@ class Dog < Animal
   end
 end
 
+# Catクラスの追加(Animalクラスの継承)
 class Cat < Animal
   def initialize(name)
     super
