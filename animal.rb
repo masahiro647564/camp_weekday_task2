@@ -15,7 +15,7 @@ end
 class Dog < Animal
   def initialize(name)
     super
-    @voice = "ワンワン"
+    @voice = "ワンワン!"
   end
 end
 
