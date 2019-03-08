@@ -11,7 +11,7 @@ class Animal
   end
 end
 
-# Dogクラスの追加(Animalクラスの継承 )
+# Dogクラスの追加(Animalクラスの継承)
 class Dog < Animal
   def initialize(name)
     super
