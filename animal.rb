@@ -10,3 +10,22 @@ class Animal
     "#{self.name}: #{voice}"
   end
 end
+
+# Dogクラスの追加(Animalクラスの継承)
+class Dog < Animal
+  def initialize(name)
+    super
+    @voice = "ワンワン!"
+  end
+end
+
+# Catクラスの追加(Animalクラスの継承)
+class Cat < Animal
+  def initialize(name)
+    super
+    @voice = "ニャー!"
+  end
+end
+
+
+
